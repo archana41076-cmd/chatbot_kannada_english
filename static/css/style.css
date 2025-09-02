@@ -1,0 +1,141 @@
+body {
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;  /* Default font for English */
+}
+
+/* Kannada-specific font style */
+body.kannada {
+    font-family: 'Noto Sans Kannada', sans-serif;  /* Apply Kannada-compatible font */
+}
+
+.chat-container {
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.674);
+}
+
+.chat-header {
+    background: rgb(228, 75, 228);
+    color: white;
+    padding: 1px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.language-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.language-selector button {
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #e94ee8;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.language-selector button:hover {
+    background-color: #e57cfa;
+}
+
+.chat-box {
+    height: 500px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Set smaller max-width for messages to make them shorter */
+.chat-box div {
+    margin: 10px 0;
+    padding: 8px 12px;
+    border-radius: 30px;  /* Curved edges for each message container */
+    display: inline-block;
+    max-width: 60%;  /* Set max-width to 60% of the chat box */
+}
+
+/* General message styling */
+.message {
+    margin-bottom: 0px;            /* Small gap between messages */
+    padding: 0;                    /* No padding to remove extra space inside the bubble */
+    font-size: 20px;               /* Tight font size */
+    line-height: 1.2;              /* Tight line height to keep text compact */
+    border-radius: 20px;           /* Rounded corners for the bubble */
+    max-width: 80%;                /* Control the maximum width of the bubble */
+    word-wrap: break-word;         /* Prevents overflow for long words */
+    white-space: normal;           /* Ensures text wraps inside the bubble */
+    background-color: #e0e0e0;     /* Light grey background for user messages */
+    display: inline-block;         /* Ensures message takes up only the space it needs */
+}
+
+/* Bot message styling */
+.bot-message {
+    background-color: #d1f5d3;     /* Light green for bot messages */
+    align-self: flex-start;        /* Align bot messages to the left */
+    border-radius: 20px;           /* Same rounded corners */
+    padding: 0;                    /* No extra padding */
+    font-size: 14px;               /* Consistent font size */
+    line-height: 1.2;              /* Tight line height */
+    max-width: 80%;                /* Control the maximum width */
+    word-wrap: break-word;         /* Prevent overflow */
+    white-space: normal;           /* Ensures text wraps */
+}
+
+/* User message styling */
+.user-message {
+    background-color: #e0e0e0;     /* Light grey for user messages */
+    align-self: flex-end;          /* Align user messages to the right */
+    border-radius: 20px;           /* Rounded corners for user messages */
+    padding: 0;                    /* No padding */
+    font-size: 14px;               /* Consistent font size */
+    line-height: 1.2;              /* Tight line height */
+    max-width: 80%;                /* Control the maximum width */
+    word-wrap: break-word;         /* Prevent overflow */
+    white-space: normal;           /* Ensures text wraps */
+}
+
+/* Input area styling */
+.input-area {
+    display: flex;
+    width:100%;
+    padding: 10px;
+    gap: 10px;
+    border-top: 1px solid rgb(178, 106, 178);
+    justify-content: center; /* Align input and button in one row */
+}
+
+input[type="text"] {
+    flex-grow: 1;  /* Make input take up the available space */
+    padding: 10px;
+    border: 1px solid rgb(178, 106, 178);
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: rgb(233, 94, 233);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(212, 92, 212);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if language == 'kannada' %}
+            ಕಾಲೇಜು ವಿಚಾರಣಾ ಚಾಟ್‌ಬಾಟ್
+        {% else %}
+            College Enquiry Chatbot
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>
+                {% if language == 'kannada' %}
+                    ಕಾಲೇಜು ವಿಚಾರಣಾ ಚಾಟ್‌ಬಾಟ್
+                {% else %}
+                    College Enquiry Chatbot
+                {% endif %}
+            </h3>
+            <div class="language-selector">
+                <a href="/change_language/{{ 'english' if language == 'kannada' else 'kannada' }}" class="lang-option">
+                    {% if language == 'kannada' %}
+                       If you want to switch to English Click here
+                    {% else %}
+                       If you want to switch to ಕನ್ನಡ Click here
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        <div class="chat-box">
+            {% for msg, sender in messages %}
+                <div class="message {{ sender }}">
+                    {{ msg|safe }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="input-area">
+            <form action="/ask" method="POST">
+                <input type="text" id="user_message" name="user_message" placeholder="{% if language == 'kannada' %}ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?{% else %}Ask me anything...{% endif %}" required>
+                <button type="submit">
+                    {% if language == 'kannada' %}
+                        ಕಳುಹಿಸು
+                    {% else %}
+                        Send
+                    {% endif %}
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
